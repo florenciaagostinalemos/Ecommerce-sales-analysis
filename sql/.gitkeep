@@ -1,1 +1,53 @@
+-- Identify top selling categories
 
+SELECT category, SUM(sales) AS total_sales
+FROM data-analysis-project-493517.ecommerce_data.superstore
+GROUP BY category
+ORDER BY total_sales DESC;
+
+
+-- Identify categories with higher profits
+
+SELECT category, SUM(profit) AS total_profit
+FROM data-analysis-project-493517.ecommerce_data.superstore
+GROUP BY category
+ORDER BY total_profit DESC;
+
+
+-- Identify categories/ sub-categories with losses
+
+SELECT category, SUM(profit) AS total_profit
+FROM data-analysis-project-493517.ecommerce_data.superstore
+GROUP BY category
+HAVING total_profit < 0;
+
+
+SELECT `Sub-Category`, SUM(profit) AS total_profit
+FROM data-analysis-project-493517.ecommerce_data.superstore
+GROUP BY `Sub-Category`
+HAVING total_profit < 0
+ORDER BY total_profit;
+
+
+-- Analysis of discounts and profits
+
+SELECT 
+  `Sub-Category` AS sub_category,
+  AVG(discount) AS avg_discount,
+  SUM(profit) AS total_profit
+FROM data-analysis-project-493517.ecommerce_data.superstore
+WHERE `Sub-Category` IN ('Tables', 'Bookcases', 'Supplies')
+GROUP BY sub_category
+ORDER BY total_profit;
+
+
+-- Profitability of each sale
+
+SELECT 
+  `Sub-Category` AS sub_category,
+  AVG(profit / sales) AS avg_profit_margin,
+  SUM(profit) AS total_profit
+FROM data-analysis-project-493517.ecommerce_data.superstore
+WHERE `Sub-Category` IN ('Tables', 'Bookcases', 'Supplies')
+GROUP BY sub_category
+ORDER BY avg_profit_margin;
