@@ -21,6 +21,7 @@ The dataset contains transactional sales data from an e-commerce business, inclu
 
 * SQL (Google BigQuery)
 * Excel (data cleaning and preparation)
+* Tableau
 
 ---
 
@@ -110,4 +111,9 @@ Key business questions answered:
 * Optimize discount policies
 * Identify and manage extreme loss-making transactions
 * Focus on high-performing seasonal periods (e.g., November)
+
+
+## 📊 Dashboard
+
+![Dashboard](images/dashboard)
 
