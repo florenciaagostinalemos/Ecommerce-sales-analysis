@@ -115,5 +115,5 @@ Key business questions answered:
 
 ## 📊 Dashboard
 
-![Dashboard](images/dashboard)
+👉 Images
 
